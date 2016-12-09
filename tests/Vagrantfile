@@ -1,0 +1,16 @@
+VAGRANTFILE_API_VERSION = "2"
+MACHINE_HOSTNAME = "piptest"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.box = "bento/centos-7.1"
+
+    config.vm.provision "ansible" do |ansible|
+        ansible.playbook = "test.yml"
+        # ansible.sudo = true
+        ansible.verbose = "v" # "vvvv"
+    end
+
+    config.vm.define MACHINE_HOSTNAME do |machine|
+        machine.vm.hostname = MACHINE_HOSTNAME
+    end
+end

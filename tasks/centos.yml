@@ -1,0 +1,21 @@
+---
+
+- name: "print user"
+  debug: msg="{{ ansible_env.HOME }}"
+
+- name: "install epel repository"
+  yum: name=epel-release state=present
+  sudo: yes
+
+- name: "install python-pip"
+  yum: name=python-pip state=present enablerepo=epel
+  sudo: yes
+
+- name: "make sure ~/.pip directory exists"
+  file: path=~/.pip state=directory
+
+- name: "config pip with pip.conf"
+  template: src=pip.conf.j2 dest=~/.pip/pip.conf
+
+
+

@@ -1,0 +1,7 @@
+---
+- hosts: all
+#  remote_user: root
+  roles:
+#    - .. # this .. didnot work, do not understand?
+    - ../../ansible-galaxy-pip
+
