@@ -1,18 +1,6 @@
 ---
 # tasks file for ansible-pip
-- include: ubuntu.yml
-  when: ansible_os_family == "Debian"
 
 - include: centos.yml
   when: ansible_os_family == "RedHat" or ansible_os_family == "CentOS"
-
-- name: "make sure ~/.pip directory exists"
-  file: path=~/.pip state=directory
-
-- name: "config pip with pip.conf"
-  template: src=pip.conf.j2 dest=~/.pip/pip.conf
-
-- name: "install flask"
-  shell: pip install Flask
-
 
