@@ -1,14 +1,9 @@
 ---
+# task file for install pip on Ubuntu
 
-- name: "print user"
-  debug: msg="{{ ansible_env.HOME }}"
-
-- name: "install epel repository"
-  yum: name=epel-release state=present
-  sudo: yes
 
 - name: "install python-pip"
-  yum: name=python-pip state=present enablerepo=epel
+  apt: name=python-pip state=present
   sudo: yes
 
 - name: "make sure ~/.pip directory exists"
@@ -19,5 +14,5 @@
 
 - name: "install flask"
   shell: pip install Flask
-  sudo: yes
+
 
