@@ -1,18 +1,7 @@
 ---
 # task file for install pip on Ubuntu
 
-
-- name: "install python-pip"
+- name: "ubuntu | install python-pip"
   apt: name=python-pip state=present
   sudo: yes
-
-- name: "make sure ~/.pip directory exists"
-  file: path=~/.pip state=directory
-
-- name: "config pip with pip.conf"
-  template: src=pip.conf.j2 dest=~/.pip/pip.conf
-
-- name: "install flask"
-  shell: pip install Flask
-
 
