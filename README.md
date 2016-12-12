@@ -1,19 +1,15 @@
 pip
 ===
 
-- install pip and configure repository.
-- install virtualevn and related packages
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role install pip and configure repository mirror.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+There are only two variables for repository mirror, as the default values listed below:
 
+    pip_index_url: http://mirrors.aliyun.com/pypi/simple/
+    pip_trusted_host: mirrors.aliyun.com
 
 Example Playbook
 ----------------
@@ -22,7 +18,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: frank6866.pip }
 
 License
 -------

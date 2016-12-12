@@ -9,11 +9,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
 
     config.vm.define "vagrant2" do |vagrant2|
-        vagrant2.vm.box = "bento/centos-7.2"
+        vagrant2.vm.box = "bento/ubuntu-16.10"
 
         config.vm.provision "ansible" do |ansible|
             ansible.limit = "all"
-            ansible.verbose = "v" # "vvvv"
+            ansible.verbose = "v" # "v" or "vvvv"
             ansible.playbook = "tests/test_vagrant.yml"
         end
     end

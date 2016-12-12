@@ -1,0 +1,10 @@
+---
+
+# tasks file for install pip on ubuntu
+
+- name: "install python-pip"
+  apt: name=python-pip state=present
+  sudo: yes
+
+
+
