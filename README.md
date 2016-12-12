@@ -11,6 +11,8 @@ There are only two variables for repository mirror, as the default values listed
     pip_index_url: http://mirrors.aliyun.com/pypi/simple/
     pip_trusted_host: mirrors.aliyun.com
 
+Usually you don't need to change them.
+
 Example Playbook
 ----------------
 

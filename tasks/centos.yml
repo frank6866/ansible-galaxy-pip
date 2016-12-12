@@ -4,8 +4,8 @@
 
 - name: "install epel repository"
   yum: name=epel-release state=present
-  sudo: yes
+  become: true
 
 - name: "centos | install python-pip"
   yum: name=python-pip state=present enablerepo=epel
-  sudo: yes
+  become: true
