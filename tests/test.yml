@@ -1,5 +1,4 @@
 ---
 - hosts: localhost
   roles:
-#    - .
-    - { role: frank6866.pip, pip_index_url: index_url,  pip_trusted_host: trusted_host}
+    - .
